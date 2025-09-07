@@ -22,3 +22,4 @@ C:\Users\Shapi\Desktop\ASP_study\obj\Debug\net8.0\refint\ASP_study.dll
 C:\Users\Shapi\Desktop\ASP_study\obj\Debug\net8.0\ASP_study.pdb
 C:\Users\Shapi\Desktop\ASP_study\obj\Debug\net8.0\ASP_study.genruntimeconfig.cache
 C:\Users\Shapi\Desktop\ASP_study\obj\Debug\net8.0\ref\ASP_study.dll
+C:\Users\Shapi\Desktop\ASP_study\obj\Debug\net8.0\ASP_study.sourcelink.json
