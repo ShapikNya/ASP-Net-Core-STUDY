@@ -5,6 +5,26 @@
     {
       "AbsoluteMoniker": "D:0:0:{5CDAFF43-CD9C-411D-82E8-8DEAB992C786}|ASP_study.csproj|c:\\users\\shapi\\desktop\\asp_study\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{5CDAFF43-CD9C-411D-82E8-8DEAB992C786}|ASP_study.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5CDAFF43-CD9C-411D-82E8-8DEAB992C786}|ASP_study.csproj|c:\\users\\shapi\\desktop\\asp_study\\middleware\\loggingmiddleware.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5CDAFF43-CD9C-411D-82E8-8DEAB992C786}|ASP_study.csproj|solutionrelative:middleware\\loggingmiddleware.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5CDAFF43-CD9C-411D-82E8-8DEAB992C786}|ASP_study.csproj|c:\\users\\shapi\\desktop\\asp_study\\middleware\\exceptionmiddleware.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5CDAFF43-CD9C-411D-82E8-8DEAB992C786}|ASP_study.csproj|solutionrelative:middleware\\exceptionmiddleware.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5CDAFF43-CD9C-411D-82E8-8DEAB992C786}|ASP_study.csproj|c:\\users\\shapi\\desktop\\asp_study\\controllers\\uploadcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5CDAFF43-CD9C-411D-82E8-8DEAB992C786}|ASP_study.csproj|solutionrelative:controllers\\uploadcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5CDAFF43-CD9C-411D-82E8-8DEAB992C786}|ASP_study.csproj|c:\\users\\shapi\\desktop\\asp_study\\asp_study.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{5CDAFF43-CD9C-411D-82E8-8DEAB992C786}|ASP_study.csproj|solutionrelative:asp_study.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5CDAFF43-CD9C-411D-82E8-8DEAB992C786}|ASP_study.csproj|c:\\users\\shapi\\desktop\\asp_study\\controllers\\todoscontrollercs.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5CDAFF43-CD9C-411D-82E8-8DEAB992C786}|ASP_study.csproj|solutionrelative:controllers\\todoscontrollercs.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -14,8 +34,73 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 5,
           "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "ExceptionMiddleware.cs",
+              "DocumentMoniker": "C:\\Users\\Shapi\\Desktop\\ASP_study\\Middleware\\ExceptionMiddleware.cs",
+              "RelativeDocumentMoniker": "Middleware\\ExceptionMiddleware.cs",
+              "ToolTip": "C:\\Users\\Shapi\\Desktop\\ASP_study\\Middleware\\ExceptionMiddleware.cs",
+              "RelativeToolTip": "Middleware\\ExceptionMiddleware.cs",
+              "ViewState": "AgIAAAwAAAAAAAAAAAAmwCIAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-13T21:06:31.109Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "LoggingMiddleware.cs",
+              "DocumentMoniker": "C:\\Users\\Shapi\\Desktop\\ASP_study\\Middleware\\LoggingMiddleware.cs",
+              "RelativeDocumentMoniker": "Middleware\\LoggingMiddleware.cs",
+              "ToolTip": "C:\\Users\\Shapi\\Desktop\\ASP_study\\Middleware\\LoggingMiddleware.cs",
+              "RelativeToolTip": "Middleware\\LoggingMiddleware.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-13T21:01:01.491Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "ASP_study",
+              "DocumentMoniker": "C:\\Users\\Shapi\\Desktop\\ASP_study\\ASP_study.csproj",
+              "RelativeDocumentMoniker": "ASP_study.csproj",
+              "ToolTip": "C:\\Users\\Shapi\\Desktop\\ASP_study\\ASP_study.csproj",
+              "RelativeToolTip": "ASP_study.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2025-09-13T21:00:34.369Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "UploadController.cs",
+              "DocumentMoniker": "C:\\Users\\Shapi\\Desktop\\ASP_study\\Controllers\\UploadController.cs",
+              "RelativeDocumentMoniker": "Controllers\\UploadController.cs",
+              "ToolTip": "C:\\Users\\Shapi\\Desktop\\ASP_study\\Controllers\\UploadController.cs",
+              "RelativeToolTip": "Controllers\\UploadController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-13T20:47:05.191Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "TodosControllercs.cs",
+              "DocumentMoniker": "C:\\Users\\Shapi\\Desktop\\ASP_study\\Controllers\\TodosControllercs.cs",
+              "RelativeDocumentMoniker": "Controllers\\TodosControllercs.cs",
+              "ToolTip": "C:\\Users\\Shapi\\Desktop\\ASP_study\\Controllers\\TodosControllercs.cs",
+              "RelativeToolTip": "Controllers\\TodosControllercs.cs",
+              "ViewState": "AgIAABAAAAAAAAAAAAAQwCQAAAAyAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-13T20:26:04.811Z",
+              "EditorCaption": ""
+            },
             {
               "$type": "Document",
               "DocumentIndex": 0,
@@ -24,7 +109,7 @@
               "RelativeDocumentMoniker": "Program.cs",
               "ToolTip": "C:\\Users\\Shapi\\Desktop\\ASP_study\\Program.cs*",
               "RelativeToolTip": "Program.cs*",
-              "ViewState": "AgIAADAAAAAAAAAAAAAAAEUAAAAzAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAxAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-09-07T11:30:35.164Z",
               "EditorCaption": ""
