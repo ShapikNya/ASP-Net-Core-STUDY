@@ -63,21 +63,42 @@ app.Run(async (context) =>
 
         case "POST":
             {
-                if (request.Path != "/api/todos") break;
+                if (request.Path == "/api/todos")
+                {
+                    try
+                    {
+                        var item = await request.ReadFromJsonAsync<TodoItem>();
+                        if (item == null) return;
+                        todos.Add(item);
+                        response.StatusCode = 201;
+                        await response.WriteAsync($"Задание {item.Title} успешно добавлено!");
+                    }
+                    catch
+                    {
+                        response.StatusCode = 400;
+                        await response.WriteAsync("Неверная запись Json");
+                    }
+                }
 
-                try
+                if (request.Path == "/api/upload")
                 {
-                    var item = await request.ReadFromJsonAsync<TodoItem>();
-                    if (item == null) return;
-                    todos.Add(item);
-                    response.StatusCode = 201;
-                    await response.WriteAsync($"Задание {item.Title} успешно добавлено!");
+                    IFormFileCollection files = request.Form.Files;
+
+                    var uploadPath = $"{Directory.GetCurrentDirectory()}/uploads";
+
+                    foreach (var file in files)
+                    {
+                        string fullPath = $"{uploadPath}/{file.FileName}";
+
+                        using (var fileStream = new FileStream(fullPath, FileMode.Create))
+                        {
+                            await file.CopyToAsync(fileStream);
+                        }
+                    }
+                    await response.WriteAsync("Файлы успешно загружены");
+
                 }
-                catch
-                {
-                    response.StatusCode = 400;
-                    await response.WriteAsync("Неверная запись Json");
-                }
+
 
                 break;
             }
