@@ -13,103 +13,62 @@ var todos = new List<TodoItem>() {
 };
 
 
-app.Run(async (context) =>
+app.MapGet("/api/todos", (HttpContext context) =>
 {
-    var request = context.Request;
-    var response = context.Response; response.ContentType = "text/html; charset=utf-8";
-
-    switch (request.Method)
+    if (context.Request.Query.ContainsKey("index"))
     {
-        case "GET":
+        try
+        {
+            int index = Convert.ToInt32(context.Request.Query["index"]);
+            var person = todos.ElementAtOrDefault(index);
+
+            if (person != null)
             {
-                if (request.Path != "/api/todos") break;
-
-                //Поиск по индексу
-                if (request.Query.ContainsKey("index"))
-                {
-                    try
-                    {
-                        int index = Convert.ToInt32(request.Query["index"]);
-                        var person = todos.ElementAtOrDefault(index);
-                        if (person != null)
-                        {
-                            string personJson = JsonSerializer.Serialize(person, new JsonSerializerOptions
-                            {
-                                WriteIndented = true
-                            });
-                            response.StatusCode = 201;
-                            await response.WriteAsync(personJson);
-                        }
-                        response.StatusCode = 400;
-                        await response.WriteAsync("Person с таким индексом не существует");
-                        break;
-                    }
-                    catch
-                    {
-                        response.StatusCode = 400;
-                        await response.WriteAsync("Неверная запись значения ключа");
-                        break;
-                    }
-                }
-                //Вывод всех заданий
-                string Json = JsonSerializer.Serialize(todos, new JsonSerializerOptions
-                {
-                    WriteIndented = true
-                });
-
-                await response.WriteAsync(Json);
-                break;
+                return Results.Json(person);
             }
-
-        case "POST":
-            {
-                if (request.Path == "/api/todos")
-                {
-                    try
-                    {
-                        var item = await request.ReadFromJsonAsync<TodoItem>();
-                        if (item == null) return;
-                        todos.Add(item);
-                        response.StatusCode = 201;
-                        await response.WriteAsync($"Задание {item.Title} успешно добавлено!");
-                    }
-                    catch
-                    {
-                        response.StatusCode = 400;
-                        await response.WriteAsync("Неверная запись Json");
-                    }
-                }
-
-                if (request.Path == "/api/upload")
-                {
-                    IFormFileCollection files = request.Form.Files;
-
-                    var uploadPath = $"{Directory.GetCurrentDirectory()}/uploads";
-
-                    foreach (var file in files)
-                    {
-                        string fullPath = $"{uploadPath}/{file.FileName}";
-
-                        using (var fileStream = new FileStream(fullPath, FileMode.Create))
-                        {
-                            await file.CopyToAsync(fileStream);
-                        }
-                    }
-                    await response.WriteAsync("Файлы успешно загружены");
-
-                }
-
-
-                break;
-            }
-        default:
-            {
-                response.StatusCode = 500;
-                response.WriteAsync("Тип данного запроса не поддерживается"); break;
-            }
+           return Results.BadRequest("Person с таким индексом не существует");
+        }
+        catch (Exception ex) 
+        {
+           return Results.BadRequest(ex.Message);
+        }
     }
 
+    return Results.Json(todos);
+});
 
+app.MapPost("/api/todos", async (HttpContext context) =>
+{
+    var item = await context.Request.ReadFromJsonAsync<TodoItem>();
+    if (item == null) return Results.BadRequest("Пустые данные");
+    todos.Add(item);
+    return Results.Ok($"Задание {item.Title} успешно добавлено!");
+});
+
+
+app.MapPost("/api/upload", async (HttpContext context) =>
+{
+    try
+    {
+        IFormFileCollection files = context.Request.Form.Files;
+
+        var uploadPath = $"{Directory.GetCurrentDirectory()}/uploads";
+
+        foreach (var file in files)
+        {
+            string fullPath = $"{uploadPath}/{file.FileName}";
+
+            using (var fileStream = new FileStream(fullPath, FileMode.Create))
+            {
+                await file.CopyToAsync(fileStream);
+            }
+        }
+        return Results.Ok($"Успешно загружено {context.Request.Form.Files.Count}!");
+    }
+    catch (Exception ex)
+    {
+        return Results.BadRequest($"{ex.Message}");
+    }
 });
 
 app.Run();
